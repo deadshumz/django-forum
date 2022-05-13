@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Main Page{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    {% if user.is_authenticated %}
+        <h1>Welcome back, {{ user.username }}</h1>
+        <p>Your pk - {{ user.pk }}</p>
+        
+        
+    {% else %}
+        <h1>Sign in to see..</h1>
+    {% endif %}
+</div>
+{% endblock %}

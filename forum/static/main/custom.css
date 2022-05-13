@@ -1,0 +1,59 @@
+.container {
+  max-width: 1200px;
+}
+
+.bio-input {
+  -webkit-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
+}
+
+.bio-input, .bio-input:disabled {
+  background-color: transparent;
+  padding: 0;
+  border: 0px;
+  border-radius: 0;
+  cursor: text;
+  border-color: #dee2e6;
+}
+
+.bio-input:focus {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #dee2e6;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.25rem;
+}
+
+.admin-username {
+  color: #dc3545;
+}
+
+.search-input {
+  padding-right: 40px;
+}
+
+.navbar-search-icon {
+  color: #adb5bd;
+}
+
+.navbar-search-icon:hover {
+  color: #212529;
+}
+
+#username {
+  color: #6c757d;
+}
+
+#username:hover {
+  color: #212529;
+}
+/*# sourceMappingURL=custom.css.map */

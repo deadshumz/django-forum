@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <div class="container">
+        <a class="navbar-brand align-baseline" href="{% url 'main:index' %}">
+            Forum
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarText">
+            <!-- TODO: User search -->
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                <!-- <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li> -->
+                <li class="nav-item">
+                    <form class="position-relative d-flex ms-auto me-5 w-75">
+                        <input class="form-control search-input w-100" type="text" placeholder="Search user" aria-label="Search">
+                        <button class="btn search-button position-absolute end-0" type="submit" aria-label="Search Button"><i class="bi bi-search navbar-search-icon"></i></button>
+                    </form>
+                </li>
+            </ul>
+            <div class="d-flex">
+                {% if not user.is_authenticated %}
+                    <a href="{% url 'users:signup' %}" class="btn btn-outline-success me-2">Sign Up</a>
+                    <a href="{% url 'users:signin' %}" class="btn">Sign In</a>
+                {% else %}
+                    <a class="nav-link" href="{{ request.user.profile.get_absolute_url }}" id="username">{{ user.username|truncatechars:10 }}</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</nav>

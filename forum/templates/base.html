@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="preload" href="{% static 'main/bootstrap/scss/bootstrap.css' %}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{% static 'main/bootstrap/scss/bootstrap.css' %}"></noscript>
+    <link rel="preload" href="{% static 'main/custom.css' %}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{% static 'main/custom.css' %}"></noscript>
+    <link rel="preload" href="{% static 'main/bootstrap-icons.css' %}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{% static 'main/bootstrap-icons.css' %}"></noscript>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    {% block content %}
+    {% endblock %}
+
+
+    {% block scripts %}
+    {% endblock %}
+
+    <!-- <script src="{% static 'main/bootstrap.bundle.min.js' %}"></script> -->
+</body>
+</html>

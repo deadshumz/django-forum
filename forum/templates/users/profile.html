@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ target }} - user profile {% endblock %}
+
+{% block content %}
+    <div class="container mt-5 height-10000">
+        <div class="row px-0 gx-lg-3 gx-0 gy-lg-0 gy-3 mx-auto" data-masonry='{"percentPosition": true }'>
+            <div class="col-lg-3 col-12 d-flex justify-content-center d-flex flex-column">
+                <img src="{{ target.avatar.url }}" alt="user-avatar" class="img-fluid border rounded">
+                
+                <!-- TODO: Update profile image -->
+                {% if user == target.user %}
+                    <input class="form-control mt-3" type="file" id="formFile">
+                {% endif %}
+            </div>
+            <div class="col-lg-9 col-12 border rounded p-4">
+                <h2 class="{% if target.user.is_superuser %}admin-username{% endif %}">{{ target.user.username }}</h2>
+
+                <form action="" method="POST" id="status-form">
+                    {% csrf_token %}
+                    <input name="status" class="form-control bio-input" placeholder="Write something here!" type="text" value="{{ target.bio }}" {% if user != target.user %}disabled{% endif %} id="change-bio" maxlength="64">
+                </form>
+                <p></p>
+                <!-- <p>{% if user.is_superuser %} {{ target.user.email }} {% endif %}</p> -->
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+{% load static %}
+<script src="{% static 'main/masonry.pkgd.min.js' %}"></script>
+<script src="{% static 'main/status.js' %}"></script>
+{% endblock %}
+
