@@ -5,3 +5,6 @@
 *.scss
 /.venv
 /.vscode
+/forum/static/main/bootstrap/scss/bootstrap-utilities.css
+/forum/static/main/bootstrap/scss/bootstrap-reboot.css
+/forum/static/main/bootstrap/scss/bootstrap-grid.css
